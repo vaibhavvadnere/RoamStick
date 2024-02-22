@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_start_up.xml"
+    app:startDestination="@id/get_started">
+
+    <fragment
+        android:id="@+id/get_started"
+        android:name="com.iSay1.roamstick.splash.SplashFragment"
+        android:label="fragment_get_started"
+        tools:layout="@layout/splash_fragment">
+
+        <action
+            android:id="@+id/action_lets_in"
+            app:destination="@+id/frag_lets_in" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/frag_lets_in"
+        android:name="com.iSay1.roamstick.onBoarding.LetsYouInFragment"
+        android:label="fragment_lets_you_in"
+        tools:layout="@layout/lets_you_in_fragment">
+
+        <action
+            android:id="@+id/action_sign_in"
+            app:destination="@+id/frag_log_in" />
+
+        <action
+            android:id="@+id/action_sign_up"
+            app:destination="@+id/frag_sign_up" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/frag_log_in"
+        android:name="com.iSay1.roamstick.login.LoginFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/log_in_fragment">
+
+        <action
+            android:id="@+id/action_login_dashboard"
+            app:destination="@+id/frag_bottom_navigation_menu" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/frag_sign_up"
+        android:name="com.falcon.evCharger.signUp.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/sign_up_fragment">
+
+        <action
+            android:id="@+id/action_verify_otp"
+            app:destination="@+id/frag_verify_otp" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/frag_verify_otp"
+        android:name="com.iSay1.roamstick.verifyOtp.VerifyOtpFragment"
+        android:label="fragment_verify_otp"
+        tools:layout="@layout/verify_otp_fragment">
+
+        <action
+            android:id="@+id/action_verified_dashboard"
+            app:destination="@+id/frag_bottom_navigation_menu" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/frag_bottom_navigation_menu"
+        android:name="com.iSay1.roamstick.bottomNavigation.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu">
+
+      <!--  <action
+            android:id="@+id/action_dashboard_add_property"
+            app:destination="@+id/frag_add_property" />-->
+
+    </fragment>
+
+   <!-- <fragment
+        android:id="@+id/frag_dashboard"
+        android:name="com.iSay1.roamstick.dashboard.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/dashboard_fragment">
+
+        <action
+            android:id="@+id/action_dashboard_add_property"
+            app:destination="@+id/frag_add_property" />
+
+    </fragment>-->
+
+    <fragment
+        android:id="@+id/frag_add_property"
+        android:name="com.iSay1.roamstick.property.AddPropertyFragment"
+        android:label="fragment_add_property"
+        tools:layout="@layout/add_property_fragment">
+
+    </fragment>
+
+</navigation>
