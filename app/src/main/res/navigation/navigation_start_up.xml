@@ -15,6 +15,10 @@
             android:id="@+id/action_lets_in"
             app:destination="@+id/frag_lets_in" />
 
+        <action
+            android:id="@+id/action_dashboard"
+            app:destination="@+id/frag_bottom_navigation_menu" />
+
     </fragment>
 
     <fragment
@@ -43,6 +47,10 @@
             android:id="@+id/action_login_dashboard"
             app:destination="@+id/frag_bottom_navigation_menu" />
 
+        <action
+            android:id="@+id/action_login_back_press"
+            app:destination="@+id/frag_lets_in" />
+
 
     </fragment>
 
@@ -56,8 +64,8 @@
             android:id="@+id/action_verify_otp"
             app:destination="@+id/frag_verify_otp" />
 
-
     </fragment>
+
     <fragment
         android:id="@+id/frag_verify_otp"
         android:name="com.iSay1.roamstick.verifyOtp.VerifyOtpFragment"
@@ -76,29 +84,118 @@
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu">
 
-      <!--  <action
-            android:id="@+id/action_dashboard_add_property"
-            app:destination="@+id/frag_add_property" />-->
+        <action
+            android:id="@+id/action_property_frag_add_property"
+            app:destination="@+id/frag_add_property" />
+
+        <action
+            android:id="@+id/action_property_types_frag_property"
+            app:destination="@+id/frag_property_types" />
+
+        <action
+            android:id="@+id/action_setup_frag_caretakers"
+            app:destination="@+id/frag_care_takers" />
+
+        <action
+            android:id="@+id/action_logout"
+            app:destination="@+id/frag_log_in" />
 
     </fragment>
 
-   <!-- <fragment
-        android:id="@+id/frag_dashboard"
-        android:name="com.iSay1.roamstick.dashboard.DashboardFragment"
-        android:label="fragment_dashboard"
-        tools:layout="@layout/dashboard_fragment">
+    <!-- <fragment
+         android:id="@+id/frag_dashboard"
+         android:name="com.iSay1.roamstick.dashboard.DashboardFragment"
+         android:label="fragment_dashboard"
+         tools:layout="@layout/dashboard_fragment">
 
-        <action
-            android:id="@+id/action_dashboard_add_property"
-            app:destination="@+id/frag_add_property" />
+         <action
+             android:id="@+id/action_dashboard_add_property"
+             app:destination="@+id/frag_add_property" />
 
-    </fragment>-->
+     </fragment>-->
 
     <fragment
         android:id="@+id/frag_add_property"
         android:name="com.iSay1.roamstick.property.AddPropertyFragment"
         android:label="fragment_add_property"
         tools:layout="@layout/add_property_fragment">
+
+        <action
+            android:id="@+id/back_to_property_action"
+            app:popUpTo="@+id/frag_bottom_navigation_menu" />
+
+        <action
+            android:id="@+id/add_property_type_action"
+            app:destination="@+id/frag_add_property_type" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/frag_add_property_type"
+        android:name="com.iSay1.roamstick.property.AddPropertyTypeFragment"
+        android:label="fragment_add_property_type"
+        tools:layout="@layout/add_property_type_fragment">
+
+        <action
+            android:id="@+id/back_to_property_types_action"
+            app:destination="@+id/frag_property_types" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/frag_property_types"
+        android:name="com.iSay1.roamstick.property.PropertyTypesFragment"
+        android:label="fragment_property_type"
+        tools:layout="@layout/property_types_fragment">
+
+        <action
+            android:id="@+id/back_to_property_action"
+            app:popUpTo="@+id/frag_bottom_navigation_menu" />
+
+        <action
+            android:id="@+id/add_property_type_property_frag_action"
+            app:destination="@+id/frag_add_property_type" />
+
+        <action
+            android:id="@+id/add_property_type_images_frag_action"
+            app:destination="@+id/frag_property_types_images" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/frag_property_types_images"
+        android:name="com.iSay1.roamstick.property.PropertyTypesImagesFragment"
+        android:label="fragment_property_type_images"
+        tools:layout="@layout/property_types_images_fragment">
+
+        <action
+            android:id="@+id/back_to_property_types_action"
+            app:popUpTo="@+id/frag_property_types" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/frag_care_takers"
+        android:name="com.iSay1.roamstick.careTaker.CareTakerFragment"
+        android:label="caretaker_fragment"
+        tools:layout="@layout/caretaker_fragment">
+
+        <action
+            android:id="@+id/action_add_caretakers"
+            app:destination="@+id/frag_add_care_takers" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/frag_add_care_takers"
+        android:name="com.iSay1.roamstick.careTaker.AddCaretakerFragment"
+        android:label="add_caretaker_fragment"
+        tools:layout="@layout/add_caretaker_fragment">
+
+        <action
+            android:id="@+id/back_to_caretaker_action"
+            app:destination="@+id/frag_care_takers" />
 
     </fragment>
 

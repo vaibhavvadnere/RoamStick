@@ -9,6 +9,11 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="blue_900">#0A8ED9</color>
+    <color name="red">#F44336</color>
     <color name="greyscale_900">#212121</color>
     <color name="app_background_color">#F4F6FA</color>
+
+    <color name="mdtp_transparent_black">#7f000000</color>
+    <color name="activity_un_selected_color">#979797</color>
+
 </resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_property_type"
+        style="@style/text_style_16_bold"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginVertical="5dp"
+        android:padding="5dp"
+        android:text="Title"
+        app:layout_constraintEnd_toStartOf="@+id/iv_property_types_options"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_property_types_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/ic_options_dots"
+        android:tint="@color/greyscale_900"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_property_type"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_property_type"
+        tools:ignore="UseAppTint" />
+
+    <TextView
+        android:id="@+id/tv_label_unite_charges_type"
+        style="@style/text_style_14_normal"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        android:text="Unite Charges Type per:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_property_type" />
+
+    <TextView
+        android:id="@+id/tv_unit_charges_type"
+        style="@style/text_style_14_normal"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_label_unite_charges_type"
+        app:layout_constraintTop_toBottomOf="@+id/tv_property_type" />
+
+
+    <TextView
+        android:id="@+id/tv_label_unite_charges"
+        style="@style/text_style_14_normal"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        android:text="Unit Charges :"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_label_unite_charges_type" />
+
+
+    <TextView
+        android:id="@+id/tv_unit_charges"
+        style="@style/text_style_14_normal"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_label_unite_charges"
+        app:layout_constraintTop_toBottomOf="@+id/tv_unit_charges_type" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

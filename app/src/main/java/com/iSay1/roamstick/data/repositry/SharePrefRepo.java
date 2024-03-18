@@ -25,7 +25,7 @@ public class SharePrefRepo {
     private final String LOCATION_ID = "location_id";
 
     SharePrefRepo() {
-        mcareAlertSharedpref = RoamStickApplication.getApplicationInstance().getSharedPreferences(Constants.FALCON_EV_CHARGER_SHARED_DATA, 0);
+        mcareAlertSharedpref = RoamStickApplication.getApplicationInstance().getSharedPreferences(Constants.ROOM_STICK_SHARED_DATA, 0);
         mcareAlertSharedprefEditor = mcareAlertSharedpref.edit();
     }
 

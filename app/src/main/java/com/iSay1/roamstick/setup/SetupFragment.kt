@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import com.falcon.evCharger.setup.viewModel.SetupViewModel
 import com.iSay1.roamstick.R
 import com.iSay1.roamstick.base.HomeBaseFragment
+import com.iSay1.roamstick.data.repositry.SharePrefRepo
 import com.iSay1.roamstick.databinding.SetupFragmentBinding
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -23,7 +24,7 @@ class SetupFragment : HomeBaseFragment() {
 
     //Class to Handle all the button click
     enum class ViewOnClick {
-        SIGN_IN, SIGN_UP, SCAN_QR_BARCODE,
+        CARETAKER_CLICKED, SHARE_LOCATION_CLICKED, LOGOUT_USER
     }
 
 
@@ -31,8 +32,10 @@ class SetupFragment : HomeBaseFragment() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         // Inflate the layout for this fragment
         setupFragmentBinding = SetupFragmentBinding.inflate(inflater, container, false)
 
@@ -69,13 +72,15 @@ class SetupFragment : HomeBaseFragment() {
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onMessageEvent(viewOnClick: ViewOnClick) {
         when (viewOnClick) {
-            ViewOnClick.SIGN_IN -> {
+            ViewOnClick.CARETAKER_CLICKED -> {
                 Log.e("onSignInClick", ":clicked  SIGN_IN:")
-                mActivity?.navController?.navigate(R.id.action_sign_in)
+                mActivity?.navController?.navigate(R.id.action_setup_frag_caretakers)
             }
 
-            ViewOnClick.SIGN_UP -> {
-                mActivity?.navController?.navigate(R.id.action_sign_up)
+            ViewOnClick.LOGOUT_USER -> {
+                Log.e("onSignInClick", ":clicked  SIGN_IN:")
+                SharePrefRepo.getInstance().clearSharePref()
+                mActivity?.navController?.navigate(R.id.action_logout)
             }
 
             else -> {

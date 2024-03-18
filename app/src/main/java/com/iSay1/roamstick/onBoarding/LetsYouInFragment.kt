@@ -13,6 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import com.iSay1.roamstick.MainActivity
 import com.iSay1.roamstick.R
 import com.iSay1.roamstick.base.HomeBaseFragment
 import com.iSay1.roamstick.databinding.LetsYouInFragmentBinding
@@ -21,7 +22,7 @@ import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
-class LetsYouInFragment : HomeBaseFragment() {
+class LetsYouInFragment : HomeBaseFragment(), MainActivity.onBackPressListener {
 
     private lateinit var letsYouInFragmentBinding: LetsYouInFragmentBinding
 
@@ -37,14 +38,17 @@ class LetsYouInFragment : HomeBaseFragment() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
         // Inflate the layout for this fragment
         letsYouInFragmentBinding = LetsYouInFragmentBinding.inflate(inflater, container, false)
 
         mActivity?.let { letsYouInFragmentViewModel.init(it) }
 
         letsYouInFragmentBinding.viewModel = letsYouInFragmentViewModel
+
+        mActivity?.registerOnBackPress(this)
 
         val signInMsg = String.format(getString(R.string.don_t_have_an_account_sign_up))
 
@@ -113,6 +117,13 @@ class LetsYouInFragment : HomeBaseFragment() {
         }
     }
 
+    override fun onBackPress() {
 
+        Log.e("onBackPress", " Lets You In ")
+
+        requireActivity().finish()
+
+        mActivity?.finishAffinity()
+    }
 }
 

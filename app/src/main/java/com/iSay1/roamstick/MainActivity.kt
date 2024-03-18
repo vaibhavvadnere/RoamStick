@@ -1,6 +1,7 @@
 package com.iSay1.roamstick
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.WindowManager
@@ -12,6 +13,15 @@ class MainActivity : BaseActivity() {
 
     var navController: NavController? = null
 
+    interface IActivityListener {
+        fun onActivityResultData(requestCode: Int, resultCode: Int, data: Intent?)
+    }
+
+    var mIActivityListener: IActivityListener? = null
+
+    fun registerListener(mIActivityListener: IActivityListener?) {
+        this.mIActivityListener = mIActivityListener
+    }
 
     interface onBackPressListener {
         fun onBackPress()
@@ -32,6 +42,8 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
 
         navController = findNavController(this@MainActivity, R.id.my_nav_host_fragment)
+
+        hideKeyboard()
     }
 
     @SuppressLint("LongLogTag")
@@ -50,6 +62,12 @@ class MainActivity : BaseActivity() {
 
     override fun networkIsAvailable() {}
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (mIActivityListener != null) {
+            mIActivityListener!!.onActivityResultData(requestCode, resultCode, data)
+        }
+    }
 
 }
 

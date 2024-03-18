@@ -3,6 +3,7 @@
 
     <string name="don_t_have_an_account_sign_up">Don’t have an account? Sign up</string>
     <string name="sign_in_with_phone_number">Sign in with Phone Number</string>
+    <string name="sign_in_with_email_password">Sign in with Email Passwords</string>
     <string name="enter_email">Enter Email</string>
     <string name="please_enter_your_phone_number_msg">Please enter your email and password. You will get logged in after verification.</string>
     <string name="txt_continue">Continue</string>
@@ -23,5 +24,49 @@
 
     <string name="dashboard">Dashboard</string>
     <string name="setup">Setup</string>
+    <string name="add"><u>Add</u></string>
+    <string name="update"><u>Update</u></string>
+    <string name="properties">Properties</string>
+    <string name="add_property">Add Property</string>
+    <string name="create_property">Create Property</string>
+    <string name="property_type">Property Type</string>
+    <string name="property">Property</string>
+    <string name="unit_charges_type">Unit charges Type</string>
+    <string name="number_of_units">Number Of Units</string>
+    <string name="select_unit_charges_type">Select Unit Charges type</string>
+    <string name="rate_per_unit">Rate per unit</string>
+    <string name="address_area_and_street">Address (Area and Street)</string>
+    <string name="city_district_town">City/District/Town</string>
+    <string name="landmark_optional">Landmark(Optional)</string>
+    <string name="pincode">Pincode</string>
+    <string name="locality">Locality</string>
+    <string name="something_went_wrong">Something went wrong…</string>
+    <string name="accept_the_terms_first">Kindly accept the terns first</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="select_amenities">Select Amenities</string>
+    <string name="amenities">Amenities</string>
+    <string name="complimentary">Complimentary</string>
+    <string name="select_complimentary">Select Complimentary</string>
+    <string name="select_state">Select State</string>
+    <string name="valid_from">Valid From</string>
+    <string name="valid_to">Valid To</string>
+    <string name="state">State</string>
+    <string name="select_property_type">Select Property Type</string>
+    <string name="title">Title</string>
+    <string name="please_select_property_type">Please select property type.</string>
+    <string name="property_name">Property Name</string>
+    <string name="select_caretaker">Select Caretaker</string>
+    <string name="address">Address :</string>
+    <string name="caretaker">Caretaker</string>
+    <string name="carertakers">Carertakers</string>
+    <string name="add_caretaker">Add Caretaker</string>
+    <string name="add_property_type">Add Property Type</string>
+    <string name="property_types">Property Types</string>
+    <string name="property_types_images">Property Types Images</string>
+    <string name="delete">Delete</string>
+    <string name="are_you_sure_you_want_to_delete">Are you sure you want to delete %s ?</string>
+    <string name="are_you_sure_you_want_to_delete_caretaker">Are you sure you want to delete %s ? If you delete caretaker, then he/she will get removed from all mapped properties. </string>
+    <string name="delete_header">Delete %s</string>
 
 </resources>

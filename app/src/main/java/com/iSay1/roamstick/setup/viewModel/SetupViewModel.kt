@@ -28,8 +28,19 @@ class SetupViewModel : ViewModel() {
     }
 
     //Function to handle Yes Click
-    fun onSignInClick(view: View) {
-        EventBus.getDefault().post(SetupFragment.ViewOnClick.SIGN_IN)
+    fun onCaretakerClick(view: View) {
+        EventBus.getDefault().post(SetupFragment.ViewOnClick.CARETAKER_CLICKED)
     }
+
+    //Function to handle Yes Click
+    fun onShareLocationClick(view: View) {
+        EventBus.getDefault().post(SetupFragment.ViewOnClick.SHARE_LOCATION_CLICKED)
+    }
+
+    fun onLogoutClick(view: View) {
+        EventBus.getDefault().post(SetupFragment.ViewOnClick.LOGOUT_USER)
+    }
+
+
 
 }

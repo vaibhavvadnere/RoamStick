@@ -22,15 +22,17 @@ class DashboardFragment : HomeBaseFragment() {
 
     //Class to Handle all the button click
     enum class ViewOnClick {
-        ADD_PROPERTY, SIGN_UP, SCAN_QR_BARCODE,
+        ADD_PROPERTY
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         // Inflate the layout for this fragment
         dashboardFragmentBinding = DashboardFragmentBinding.inflate(inflater, container, false)
 

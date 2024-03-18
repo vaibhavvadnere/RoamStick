@@ -8,8 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
+import com.iSay1.roamstick.Constants
 import com.iSay1.roamstick.R
 import com.iSay1.roamstick.base.HomeBaseFragment
+import com.iSay1.roamstick.data.repositry.SharePrefRepo
 import com.iSay1.roamstick.databinding.SplashFragmentBinding
 
 class SplashFragment : HomeBaseFragment() {
@@ -18,13 +20,17 @@ class SplashFragment : HomeBaseFragment() {
 
     private val splashTimeout: Long = 2000
 
+    val sharePrefRepo: SharePrefRepo = SharePrefRepo.getInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
 
         // Inflate the layout for this fragment
         splashFragmentBinding = SplashFragmentBinding.inflate(inflater, container, false)
@@ -39,11 +45,15 @@ class SplashFragment : HomeBaseFragment() {
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
 
-        Handler(Looper.getMainLooper()).postDelayed(
+        if (sharePrefRepo.getBoolean(Constants.IS_LOGGED_IN)) {
+            mActivity?.navController?.navigate(R.id.action_dashboard)
+        } else {
+            Handler(Looper.getMainLooper()).postDelayed(
                 {
                     mActivity?.navController?.navigate(R.id.action_lets_in)
-                }, splashTimeout)
-
+                }, splashTimeout
+            )
+        }
     }
 
     override fun connectionAvailable() {
