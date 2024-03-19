@@ -30,7 +30,7 @@ android {
         debug {
             debuggable true
             shrinkResources false
-            buildConfigField "String", "BASE_URL", "\"https://roamstick.com/\""
+            buildConfigField "String", "BASE_URL", "\"http://testing.roamstick.com/\""
         }
     }
     compileOptions {

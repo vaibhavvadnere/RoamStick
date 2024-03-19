@@ -56,11 +56,10 @@ class LoginFragment : HomeBaseFragment(), MainActivity.onBackPressListener {
 
         mActivity?.registerOnBackPress(this)
 
-        if (Constants.IS_TESTING_MODE) {
-            logInFragmentBinding.edtEmail.setText("amruta.ecs@gmail.com")
-            logInFragmentBinding.edtPassword.setText("Atr2024@123#")
-            /*logInFragmentBinding.edtEmail.setText("vaibhavvadnere@gmail.com")
-            logInFragmentBinding.edtPassword.setText("abc123")*/
+        if (Constants.IS_TESTING_MODE) {/*logInFragmentBinding.edtEmail.setText("amruta.ecs@gmail.com")
+            logInFragmentBinding.edtPassword.setText("Atr2024@123#")*/
+            logInFragmentBinding.edtEmail.setText("vaibhavvadnere@gmail.com")
+            logInFragmentBinding.edtPassword.setText("abc123")
         }
 
         return logInFragmentBinding.root
